@@ -247,6 +247,13 @@ function closeDrawer() {
 
 // === Event Listeners Setup ===
 function setupEventListeners() {
+    // Dynamic Expense Tracker Links
+    const EXPENSE_TRACKER_URL = localStorage.getItem('expenseTrackerUrl') || 'https://expense-tracer-seven.vercel.app/';
+    const headerExpenseLink = document.getElementById('headerExpenseLink');
+    const drawerExpenseLink = document.getElementById('drawerExpenseLink');
+    if (headerExpenseLink) headerExpenseLink.href = EXPENSE_TRACKER_URL;
+    if (drawerExpenseLink) drawerExpenseLink.href = EXPENSE_TRACKER_URL;
+
     // Nav Drawer
     DOM.menuBtn.addEventListener('click', openDrawer);
     DOM.closeDrawerBtn.addEventListener('click', closeDrawer);
